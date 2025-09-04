@@ -1,0 +1,9 @@
+name: Build Action
+description: Enhanced composite action for Build stage with comprehensive Jenkins feature support
+inputs: {}
+runs:
+  using: composite
+  steps:
+  - name: Run command 1
+    run: npm run build
+    shell: bash

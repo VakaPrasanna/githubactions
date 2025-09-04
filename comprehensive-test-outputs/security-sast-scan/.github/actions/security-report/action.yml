@@ -1,0 +1,12 @@
+name: Security Report Action
+description: Enhanced composite action for Security Report stage with comprehensive Jenkins feature support
+inputs: {}
+runs:
+  using: composite
+  steps:
+  - name: Run command 1
+    run: python3 scripts/aggregate-security-results.py  --semgrep semgrep-results.json  --codeql codeql-results.sarif  --dependency dependency-check-report.json  --output security-summary.json
+    shell: bash
+  - name: publishHTML (REQUIRES MANUAL CONVERSION)
+    run: "\n# MANUAL CONVERSION REQUIRED: publishHTML\n# Original Jenkins feature: publishHTML([\n                        allowMissing: false,\n                        alwaysLinkToLastB\n# Action needed: Review Jenkins documentation and implement equivalent logic\n# TODO: Implement this functionality manually\n"
+    shell: bash

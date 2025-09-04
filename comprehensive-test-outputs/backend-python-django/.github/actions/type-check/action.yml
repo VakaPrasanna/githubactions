@@ -1,0 +1,9 @@
+name: Type Check Action
+description: Enhanced composite action for Type Check stage with comprehensive Jenkins feature support
+inputs: {}
+runs:
+  using: composite
+  steps:
+  - name: Run command 1
+    run: mypy myproject/ --junit-xml=mypy-report.xml || true
+    shell: bash

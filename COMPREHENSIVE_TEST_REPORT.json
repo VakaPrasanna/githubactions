@@ -1,0 +1,448 @@
+{
+  "test_summary": {
+    "total_tests": 18,
+    "passed_tests": 17,
+    "failed_tests": 1,
+    "success_rate": 94.44444444444444,
+    "average_conversion_time": 0.05784894444444444
+  },
+  "category_analysis": {
+    "edge-cases": {
+      "total": 3,
+      "passed": 2,
+      "failed": 1,
+      "avg_time": 0.048572000000000004,
+      "success_rate": 66.66666666666666
+    },
+    "docker": {
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "avg_time": 0.05559466666666666,
+      "success_rate": 100.0
+    },
+    "frontend": {
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "avg_time": 0.065459,
+      "success_rate": 100.0
+    },
+    "enterprise": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "avg_time": 0.080795,
+      "success_rate": 100.0
+    },
+    "security": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "avg_time": 0.067718,
+      "success_rate": 100.0
+    },
+    "basic": {
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "avg_time": 0.05141966666666666,
+      "success_rate": 100.0
+    },
+    "backend": {
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "avg_time": 0.062014,
+      "success_rate": 100.0
+    },
+    "kubernetes": {
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "avg_time": 0.057020999999999995,
+      "success_rate": 100.0
+    }
+  },
+  "test_results": [
+    {
+      "name": "edge-cases-broken-syntax",
+      "category": "edge-cases",
+      "pipeline": "broken-syntax",
+      "jenkinsfile_path": "test-pipelines/edge-cases/broken-syntax/Jenkinsfile",
+      "expected_success": false,
+      "timestamp": "2025-09-05T00:01:49.556791",
+      "success": false,
+      "conversion_time": 0.050485,
+      "exit_code": 0,
+      "stdout": "Converting test-pipelines/edge-cases/broken-syntax/Jenkinsfile to GitHub Actions...\nAnalyzing pipeline structure and features...\nGenerating main workflow file...\n\u2705 Main workflow saved to: comprehensive-test-outputs/edge-cases-broken-syntax/.github/workflows/ci.yml\nGenerating interactive HTML report...\n\u2705 Interactive HTML report saved to: comprehensive-test-outputs/edge-cases-broken-syntax/CONVERSION_REPORT.html\nGenerating markdown report...\n\u2705 Markdown report saved to: comprehensive-test-outputs/edge-cases-broken-syntax/CONVERSION_REPORT.md\n\n\ud83d\udcc1 Generated files:\n   - .github/workflows/ci.yml\n   - CONVERSION_REPORT.html (INTERACTIVE)\n   - CONVERSION_REPORT.md\n   - .github/actions/build/action.yml\n\n\ud83d\udcca Conversion Summary:\n   - Stages converted: 1\n   - Composite actions created: 1\n   \u2705 No manual conversion required\n\n\ud83c\udfaf Next Steps:\n   1. Open the interactive report: comprehensive-test-outputs/edge-cases-broken-syntax/CONVERSION_REPORT.html\n   2. Click on statistics to explore conversion details\n   3. Review stage-by-stage breakdown\n   4. Configure GitHub Secrets and Environments\n   5. Test the workflow with a sample commit\n\n\u2728 Conversion completed successfully!\n\ud83d\udcf1 Open CONVERSION_REPORT.html in your browser for an interactive experience!\n",
+      "stderr": "",
+      "files_generated": {
+        "workflow": true,
+        "html_report": true,
+        "md_report": true,
+        "actions_dir": true,
+        "action_count": 1
+      },
+      "errors": []
+    },
+    {
+      "name": "edge-cases-empty",
+      "category": "edge-cases",
+      "pipeline": "empty",
+      "jenkinsfile_path": "test-pipelines/edge-cases/empty/Jenkinsfile",
+      "expected_success": false,
+      "timestamp": "2025-09-05T00:01:49.608728",
+      "success": true,
+      "conversion_time": 0.043459,
+      "exit_code": 1,
+      "stdout": "Converting test-pipelines/edge-cases/empty/Jenkinsfile to GitHub Actions...\nAnalyzing pipeline structure and features...\n\u274c Pipeline Parsing Error: Not a declarative Jenkins pipeline (no 'pipeline { ... }' found).\n\nThis usually means:\n  - The file is not a valid Jenkins declarative pipeline\n  - Required pipeline structure is missing\n  - Syntax errors in the Jenkinsfile\n\nPlease check your Jenkinsfile and try again.\n",
+      "stderr": "",
+      "files_generated": {
+        "workflow": false,
+        "html_report": false,
+        "md_report": false,
+        "actions_dir": false,
+        "action_count": 0
+      },
+      "errors": []
+    },
+    {
+      "name": "edge-cases-scripted",
+      "category": "edge-cases",
+      "pipeline": "scripted",
+      "jenkinsfile_path": "test-pipelines/edge-cases/scripted/Jenkinsfile",
+      "expected_success": false,
+      "timestamp": "2025-09-05T00:01:49.652587",
+      "success": true,
+      "conversion_time": 0.051772,
+      "exit_code": 1,
+      "stdout": "Converting test-pipelines/edge-cases/scripted/Jenkinsfile to GitHub Actions...\nAnalyzing pipeline structure and features...\nWARNING: Pipeline contains features that may prevent successful conversion:\n  - Build property modifications not directly supported\nReview the conversion report for detailed guidance.\n\u274c Pipeline Parsing Error: Not a declarative Jenkins pipeline (no 'pipeline { ... }' found).\n\nThis usually means:\n  - The file is not a valid Jenkins declarative pipeline\n  - Required pipeline structure is missing\n  - Syntax errors in the Jenkinsfile\n\nPlease check your Jenkinsfile and try again.\n",
+      "stderr": "",
+      "files_generated": {
+        "workflow": false,
+        "html_report": false,
+        "md_report": false,
+        "actions_dir": false,
+        "action_count": 0
+      },
+      "errors": []
+    },
+    {
+      "name": "docker-registry-push",
+      "category": "docker",
+      "pipeline": "registry-push",
+      "jenkinsfile_path": "test-pipelines/docker/registry-push/Jenkinsfile",
+      "expected_success": true,
+      "timestamp": "2025-09-05T00:01:49.704865",
+      "success": true,
+      "conversion_time": 0.056853,
+      "exit_code": 0,
+      "stdout": "Converting test-pipelines/docker/registry-push/Jenkinsfile to GitHub Actions...\nAnalyzing pipeline structure and features...\nGenerating main workflow file...\n\u2705 Main workflow saved to: comprehensive-test-outputs/docker-registry-push/.github/workflows/ci.yml\nGenerating interactive HTML report...\n\u2705 Interactive HTML report saved to: comprehensive-test-outputs/docker-registry-push/CONVERSION_REPORT.html\nGenerating markdown report...\n\u2705 Markdown report saved to: comprehensive-test-outputs/docker-registry-push/CONVERSION_REPORT.md\n\n\ud83d\udcc1 Generated files:\n   - .github/workflows/ci.yml\n   - CONVERSION_REPORT.html (INTERACTIVE)\n   - CONVERSION_REPORT.md\n   - .github/actions/verify-push/action.yml\n   - .github/actions/build-and-tag/action.yml\n   - .github/actions/login-to-registry/action.yml\n   - .github/actions/push-images/action.yml\n\n\ud83d\udcca Conversion Summary:\n   - Stages converted: 4\n   - Composite actions created: 4\n   - Manual items requiring attention: 2\n   \u26a0\ufe0f  Check the interactive HTML report for detailed guidance\n\n\ud83c\udfaf Next Steps:\n   1. Open the interactive report: comprehensive-test-outputs/docker-registry-push/CONVERSION_REPORT.html\n   2. Click on statistics to explore conversion details\n   3. Review stage-by-stage breakdown\n   4. Configure GitHub Secrets and Environments\n   5. Test the workflow with a sample commit\n\n\u2728 Conversion completed successfully!\n\ud83d\udcf1 Open CONVERSION_REPORT.html in your browser for an interactive experience!\n",
+      "stderr": "",
+      "files_generated": {
+        "workflow": true,
+        "html_report": true,
+        "md_report": true,
+        "actions_dir": true,
+        "action_count": 4
+      },
+      "errors": []
+    },
+    {
+      "name": "docker-multi-stage",
+      "category": "docker",
+      "pipeline": "multi-stage",
+      "jenkinsfile_path": "test-pipelines/docker/multi-stage/Jenkinsfile",
+      "expected_success": true,
+      "timestamp": "2025-09-05T00:01:49.762200",
+      "success": true,
+      "conversion_time": 0.057366,
+      "exit_code": 0,
+      "stdout": "Converting test-pipelines/docker/multi-stage/Jenkinsfile to GitHub Actions...\nAnalyzing pipeline structure and features...\nGenerating main workflow file...\n\u2705 Main workflow saved to: comprehensive-test-outputs/docker-multi-stage/.github/workflows/ci.yml\nGenerating interactive HTML report...\n\u2705 Interactive HTML report saved to: comprehensive-test-outputs/docker-multi-stage/CONVERSION_REPORT.html\nGenerating markdown report...\n\u2705 Markdown report saved to: comprehensive-test-outputs/docker-multi-stage/CONVERSION_REPORT.md\n\n\ud83d\udcc1 Generated files:\n   - .github/workflows/ci.yml\n   - CONVERSION_REPORT.html (INTERACTIVE)\n   - CONVERSION_REPORT.md\n   - .github/actions/run-tests-in-container/action.yml\n   - .github/actions/build-development-image/action.yml\n   - .github/actions/build-production-image/action.yml\n   - .github/actions/security-scan/action.yml\n   - .github/actions/build-base-image/action.yml\n\n\ud83d\udcca Conversion Summary:\n   - Stages converted: 5\n   - Composite actions created: 5\n   \u2705 No manual conversion required\n\n\ud83c\udfaf Next Steps:\n   1. Open the interactive report: comprehensive-test-outputs/docker-multi-stage/CONVERSION_REPORT.html\n   2. Click on statistics to explore conversion details\n   3. Review stage-by-stage breakdown\n   4. Configure GitHub Secrets and Environments\n   5. Test the workflow with a sample commit\n\n\u2728 Conversion completed successfully!\n\ud83d\udcf1 Open CONVERSION_REPORT.html in your browser for an interactive experience!\n",
+      "stderr": "",
+      "files_generated": {
+        "workflow": true,
+        "html_report": true,
+        "md_report": true,
+        "actions_dir": true,
+        "action_count": 5
+      },
+      "errors": []
+    },
+    {
+      "name": "docker-basic-docker",
+      "category": "docker",
+      "pipeline": "basic-docker",
+      "jenkinsfile_path": "test-pipelines/docker/basic-docker/Jenkinsfile",
+      "expected_success": true,
+      "timestamp": "2025-09-05T00:01:49.820022",
+      "success": true,
+      "conversion_time": 0.052565,
+      "exit_code": 0,
+      "stdout": "Converting test-pipelines/docker/basic-docker/Jenkinsfile to GitHub Actions...\nAnalyzing pipeline structure and features...\nGenerating main workflow file...\n\u2705 Main workflow saved to: comprehensive-test-outputs/docker-basic-docker/.github/workflows/ci.yml\nGenerating interactive HTML report...\n\u2705 Interactive HTML report saved to: comprehensive-test-outputs/docker-basic-docker/CONVERSION_REPORT.html\nGenerating markdown report...\n\u2705 Markdown report saved to: comprehensive-test-outputs/docker-basic-docker/CONVERSION_REPORT.md\n\n\ud83d\udcc1 Generated files:\n   - .github/workflows/ci.yml\n   - CONVERSION_REPORT.html (INTERACTIVE)\n   - CONVERSION_REPORT.md\n   - .github/actions/test-image/action.yml\n   - .github/actions/checkout/action.yml\n   - .github/actions/push-to-registry/action.yml\n   - .github/actions/build-docker-image/action.yml\n\n\ud83d\udcca Conversion Summary:\n   - Stages converted: 4\n   - Composite actions created: 4\n   - Manual items requiring attention: 1\n   \u26a0\ufe0f  Check the interactive HTML report for detailed guidance\n\n\ud83c\udfaf Next Steps:\n   1. Open the interactive report: comprehensive-test-outputs/docker-basic-docker/CONVERSION_REPORT.html\n   2. Click on statistics to explore conversion details\n   3. Review stage-by-stage breakdown\n   4. Configure GitHub Secrets and Environments\n   5. Test the workflow with a sample commit\n\n\u2728 Conversion completed successfully!\n\ud83d\udcf1 Open CONVERSION_REPORT.html in your browser for an interactive experience!\n",
+      "stderr": "",
+      "files_generated": {
+        "workflow": true,
+        "html_report": true,
+        "md_report": true,
+        "actions_dir": true,
+        "action_count": 4
+      },
+      "errors": []
+    },
+    {
+      "name": "frontend-nodejs",
+      "category": "frontend",
+      "pipeline": "nodejs",
+      "jenkinsfile_path": "test-pipelines/frontend/nodejs/Jenkinsfile",
+      "expected_success": true,
+      "timestamp": "2025-09-05T00:01:49.873083",
+      "success": true,
+      "conversion_time": 0.068987,
+      "exit_code": 0,
+      "stdout": "Converting test-pipelines/frontend/nodejs/Jenkinsfile to GitHub Actions...\nAnalyzing pipeline structure and features...\nGenerating main workflow file...\n\u2705 Main workflow saved to: comprehensive-test-outputs/frontend-nodejs/.github/workflows/ci.yml\nGenerating interactive HTML report...\n\u2705 Interactive HTML report saved to: comprehensive-test-outputs/frontend-nodejs/CONVERSION_REPORT.html\nGenerating markdown report...\n\u2705 Markdown report saved to: comprehensive-test-outputs/frontend-nodejs/CONVERSION_REPORT.md\n\n\ud83d\udcc1 Generated files:\n   - .github/workflows/ci.yml\n   - CONVERSION_REPORT.html (INTERACTIVE)\n   - CONVERSION_REPORT.md\n   - .github/actions/prettier/action.yml\n   - .github/actions/deploy-to-staging/action.yml\n   - .github/actions/setup/action.yml\n   - .github/actions/unit-tests/action.yml\n   - .github/actions/e2e-tests/action.yml\n   - .github/actions/eslint/action.yml\n   - .github/actions/security-audit/action.yml\n   - .github/actions/build/action.yml\n   - .github/actions/type-check/action.yml\n\n\ud83d\udcca Conversion Summary:\n   - Stages converted: 9\n   - Composite actions created: 9\n   - Manual items requiring attention: 2\n   \u26a0\ufe0f  Check the interactive HTML report for detailed guidance\n\n\ud83c\udfaf Next Steps:\n   1. Open the interactive report: comprehensive-test-outputs/frontend-nodejs/CONVERSION_REPORT.html\n   2. Click on statistics to explore conversion details\n   3. Review stage-by-stage breakdown\n   4. Configure GitHub Secrets and Environments\n   5. Test the workflow with a sample commit\n\n\u2728 Conversion completed successfully!\n\ud83d\udcf1 Open CONVERSION_REPORT.html in your browser for an interactive experience!\n",
+      "stderr": "",
+      "files_generated": {
+        "workflow": true,
+        "html_report": true,
+        "md_report": true,
+        "actions_dir": true,
+        "action_count": 9
+      },
+      "errors": []
+    },
+    {
+      "name": "frontend-react",
+      "category": "frontend",
+      "pipeline": "react",
+      "jenkinsfile_path": "test-pipelines/frontend/react/Jenkinsfile",
+      "expected_success": true,
+      "timestamp": "2025-09-05T00:01:49.942582",
+      "success": true,
+      "conversion_time": 0.061931,
+      "exit_code": 0,
+      "stdout": "Converting test-pipelines/frontend/react/Jenkinsfile to GitHub Actions...\nAnalyzing pipeline structure and features...\nGenerating main workflow file...\n\u2705 Main workflow saved to: comprehensive-test-outputs/frontend-react/.github/workflows/ci.yml\nGenerating interactive HTML report...\n\u2705 Interactive HTML report saved to: comprehensive-test-outputs/frontend-react/CONVERSION_REPORT.html\nGenerating markdown report...\n\u2705 Markdown report saved to: comprehensive-test-outputs/frontend-react/CONVERSION_REPORT.md\n\n\ud83d\udcc1 Generated files:\n   - .github/workflows/ci.yml\n   - CONVERSION_REPORT.html (INTERACTIVE)\n   - CONVERSION_REPORT.md\n   - .github/actions/lint/action.yml\n   - .github/actions/test/action.yml\n   - .github/actions/install-dependencies/action.yml\n   - .github/actions/deploy-to-s3/action.yml\n   - .github/actions/security-audit/action.yml\n   - .github/actions/build/action.yml\n   - .github/actions/bundle-analysis/action.yml\n\n\ud83d\udcca Conversion Summary:\n   - Stages converted: 7\n   - Composite actions created: 7\n   - Manual items requiring attention: 2\n   \u26a0\ufe0f  Check the interactive HTML report for detailed guidance\n\n\ud83c\udfaf Next Steps:\n   1. Open the interactive report: comprehensive-test-outputs/frontend-react/CONVERSION_REPORT.html\n   2. Click on statistics to explore conversion details\n   3. Review stage-by-stage breakdown\n   4. Configure GitHub Secrets and Environments\n   5. Test the workflow with a sample commit\n\n\u2728 Conversion completed successfully!\n\ud83d\udcf1 Open CONVERSION_REPORT.html in your browser for an interactive experience!\n",
+      "stderr": "",
+      "files_generated": {
+        "workflow": true,
+        "html_report": true,
+        "md_report": true,
+        "actions_dir": true,
+        "action_count": 7
+      },
+      "errors": []
+    },
+    {
+      "name": "enterprise-complex-pipeline",
+      "category": "enterprise",
+      "pipeline": "complex-pipeline",
+      "jenkinsfile_path": "test-pipelines/enterprise/complex-pipeline/Jenkinsfile",
+      "expected_success": true,
+      "timestamp": "2025-09-05T00:01:50.004951",
+      "success": true,
+      "conversion_time": 0.080795,
+      "exit_code": 0,
+      "stdout": "Converting test-pipelines/enterprise/complex-pipeline/Jenkinsfile to GitHub Actions...\nAnalyzing pipeline structure and features...\nWARNING: Pipeline contains features that may prevent successful conversion:\n  - Build property modifications not directly supported\nReview the conversion report for detailed guidance.\nGenerating main workflow file...\n\u2705 Main workflow saved to: comprehensive-test-outputs/enterprise-complex-pipeline/.github/workflows/ci.yml\nGenerating interactive HTML report...\n\u2705 Interactive HTML report saved to: comprehensive-test-outputs/enterprise-complex-pipeline/CONVERSION_REPORT.html\nGenerating markdown report...\n\u2705 Markdown report saved to: comprehensive-test-outputs/enterprise-complex-pipeline/CONVERSION_REPORT.md\n\n\ud83d\udcc1 Generated files:\n   - .github/workflows/ci.yml\n   - CONVERSION_REPORT.html (INTERACTIVE)\n   - CONVERSION_REPORT.md\n   - .github/actions/license-check/action.yml\n   - .github/actions/build-test/action.yml\n   - .github/actions/initialize/action.yml\n   - .github/actions/performance-tests/action.yml\n   - .github/actions/deploy-to-staging/action.yml\n   - .github/actions/integration-tests/action.yml\n   - .github/actions/quality-gate/action.yml\n   - .github/actions/security-scan/action.yml\n   - .github/actions/deploy-to-production/action.yml\n   - .github/actions/docker-build/action.yml\n   - .github/actions/production-approval/action.yml\n   - .github/actions/static-analysis/action.yml\n   - .github/actions/post-deploy-validation/action.yml\n\n\ud83d\udcca Conversion Summary:\n   - Stages converted: 13\n   - Composite actions created: 13\n   - Manual items requiring attention: 6\n   \u26a0\ufe0f  Check the interactive HTML report for detailed guidance\n   - GitHub Secrets to configure: 2\n   \ud83d\udd10 See interactive report for complete secrets list\n\n\ud83c\udfaf Next Steps:\n   1. Open the interactive report: comprehensive-test-outputs/enterprise-complex-pipeline/CONVERSION_REPORT.html\n   2. Click on statistics to explore conversion details\n   3. Review stage-by-stage breakdown\n   4. Configure GitHub Secrets and Environments\n   5. Test the workflow with a sample commit\n\n\u2728 Conversion completed successfully!\n\ud83d\udcf1 Open CONVERSION_REPORT.html in your browser for an interactive experience!\n",
+      "stderr": "",
+      "files_generated": {
+        "workflow": true,
+        "html_report": true,
+        "md_report": true,
+        "actions_dir": true,
+        "action_count": 13
+      },
+      "errors": []
+    },
+    {
+      "name": "security-sast-scan",
+      "category": "security",
+      "pipeline": "sast-scan",
+      "jenkinsfile_path": "test-pipelines/security/sast-scan/Jenkinsfile",
+      "expected_success": true,
+      "timestamp": "2025-09-05T00:01:50.086225",
+      "success": true,
+      "conversion_time": 0.067718,
+      "exit_code": 0,
+      "stdout": "Converting test-pipelines/security/sast-scan/Jenkinsfile to GitHub Actions...\nAnalyzing pipeline structure and features...\nGenerating main workflow file...\n\u2705 Main workflow saved to: comprehensive-test-outputs/security-sast-scan/.github/workflows/ci.yml\nGenerating interactive HTML report...\n\u2705 Interactive HTML report saved to: comprehensive-test-outputs/security-sast-scan/CONVERSION_REPORT.html\nGenerating markdown report...\n\u2705 Markdown report saved to: comprehensive-test-outputs/security-sast-scan/CONVERSION_REPORT.md\n\n\ud83d\udcc1 Generated files:\n   - .github/workflows/ci.yml\n   - CONVERSION_REPORT.html (INTERACTIVE)\n   - CONVERSION_REPORT.md\n   - .github/actions/dependency-check/action.yml\n   - .github/actions/codeql-analysis/action.yml\n   - .github/actions/semgrep-sast/action.yml\n   - .github/actions/checkout/action.yml\n   - .github/actions/security-report/action.yml\n   - .github/actions/checkmarx-sast/action.yml\n   - .github/actions/sonarqube-sast/action.yml\n\n\ud83d\udcca Conversion Summary:\n   - Stages converted: 7\n   - Composite actions created: 7\n   - Manual items requiring attention: 1\n   \u26a0\ufe0f  Check the interactive HTML report for detailed guidance\n\n\ud83c\udfaf Next Steps:\n   1. Open the interactive report: comprehensive-test-outputs/security-sast-scan/CONVERSION_REPORT.html\n   2. Click on statistics to explore conversion details\n   3. Review stage-by-stage breakdown\n   4. Configure GitHub Secrets and Environments\n   5. Test the workflow with a sample commit\n\n\u2728 Conversion completed successfully!\n\ud83d\udcf1 Open CONVERSION_REPORT.html in your browser for an interactive experience!\n",
+      "stderr": "",
+      "files_generated": {
+        "workflow": true,
+        "html_report": true,
+        "md_report": true,
+        "actions_dir": true,
+        "action_count": 7
+      },
+      "errors": []
+    },
+    {
+      "name": "basic-minimal",
+      "category": "basic",
+      "pipeline": "minimal",
+      "jenkinsfile_path": "test-pipelines/basic/minimal/Jenkinsfile",
+      "expected_success": true,
+      "timestamp": "2025-09-05T00:01:50.154443",
+      "success": true,
+      "conversion_time": 0.045528,
+      "exit_code": 0,
+      "stdout": "Converting test-pipelines/basic/minimal/Jenkinsfile to GitHub Actions...\nAnalyzing pipeline structure and features...\nGenerating main workflow file...\n\u2705 Main workflow saved to: comprehensive-test-outputs/basic-minimal/.github/workflows/ci.yml\nGenerating interactive HTML report...\n\u2705 Interactive HTML report saved to: comprehensive-test-outputs/basic-minimal/CONVERSION_REPORT.html\nGenerating markdown report...\n\u2705 Markdown report saved to: comprehensive-test-outputs/basic-minimal/CONVERSION_REPORT.md\n\n\ud83d\udcc1 Generated files:\n   - .github/workflows/ci.yml\n   - CONVERSION_REPORT.html (INTERACTIVE)\n   - CONVERSION_REPORT.md\n   - .github/actions/hello/action.yml\n\n\ud83d\udcca Conversion Summary:\n   - Stages converted: 1\n   - Composite actions created: 1\n   \u2705 No manual conversion required\n\n\ud83c\udfaf Next Steps:\n   1. Open the interactive report: comprehensive-test-outputs/basic-minimal/CONVERSION_REPORT.html\n   2. Click on statistics to explore conversion details\n   3. Review stage-by-stage breakdown\n   4. Configure GitHub Secrets and Environments\n   5. Test the workflow with a sample commit\n\n\u2728 Conversion completed successfully!\n\ud83d\udcf1 Open CONVERSION_REPORT.html in your browser for an interactive experience!\n",
+      "stderr": "",
+      "files_generated": {
+        "workflow": true,
+        "html_report": true,
+        "md_report": true,
+        "actions_dir": true,
+        "action_count": 1
+      },
+      "errors": []
+    },
+    {
+      "name": "basic-simple-maven",
+      "category": "basic",
+      "pipeline": "simple-maven",
+      "jenkinsfile_path": "test-pipelines/basic/simple-maven/Jenkinsfile",
+      "expected_success": true,
+      "timestamp": "2025-09-05T00:01:50.200402",
+      "success": true,
+      "conversion_time": 0.055211,
+      "exit_code": 0,
+      "stdout": "Converting test-pipelines/basic/simple-maven/Jenkinsfile to GitHub Actions...\nAnalyzing pipeline structure and features...\nGenerating main workflow file...\n\u2705 Main workflow saved to: comprehensive-test-outputs/basic-simple-maven/.github/workflows/ci.yml\nGenerating interactive HTML report...\n\u2705 Interactive HTML report saved to: comprehensive-test-outputs/basic-simple-maven/CONVERSION_REPORT.html\nGenerating markdown report...\n\u2705 Markdown report saved to: comprehensive-test-outputs/basic-simple-maven/CONVERSION_REPORT.md\n\n\ud83d\udcc1 Generated files:\n   - .github/workflows/ci.yml\n   - CONVERSION_REPORT.html (INTERACTIVE)\n   - CONVERSION_REPORT.md\n   - .github/actions/test/action.yml\n   - .github/actions/checkout/action.yml\n   - .github/actions/build/action.yml\n   - .github/actions/package/action.yml\n\n\ud83d\udcca Conversion Summary:\n   - Stages converted: 4\n   - Composite actions created: 4\n   \u2705 No manual conversion required\n\n\ud83c\udfaf Next Steps:\n   1. Open the interactive report: comprehensive-test-outputs/basic-simple-maven/CONVERSION_REPORT.html\n   2. Click on statistics to explore conversion details\n   3. Review stage-by-stage breakdown\n   4. Configure GitHub Secrets and Environments\n   5. Test the workflow with a sample commit\n\n\u2728 Conversion completed successfully!\n\ud83d\udcf1 Open CONVERSION_REPORT.html in your browser for an interactive experience!\n",
+      "stderr": "",
+      "files_generated": {
+        "workflow": true,
+        "html_report": true,
+        "md_report": true,
+        "actions_dir": true,
+        "action_count": 4
+      },
+      "errors": []
+    },
+    {
+      "name": "basic-gradle-build",
+      "category": "basic",
+      "pipeline": "gradle-build",
+      "jenkinsfile_path": "test-pipelines/basic/gradle-build/Jenkinsfile",
+      "expected_success": true,
+      "timestamp": "2025-09-05T00:01:50.256037",
+      "success": true,
+      "conversion_time": 0.05352,
+      "exit_code": 0,
+      "stdout": "Converting test-pipelines/basic/gradle-build/Jenkinsfile to GitHub Actions...\nAnalyzing pipeline structure and features...\nGenerating main workflow file...\n\u2705 Main workflow saved to: comprehensive-test-outputs/basic-gradle-build/.github/workflows/ci.yml\nGenerating interactive HTML report...\n\u2705 Interactive HTML report saved to: comprehensive-test-outputs/basic-gradle-build/CONVERSION_REPORT.html\nGenerating markdown report...\n\u2705 Markdown report saved to: comprehensive-test-outputs/basic-gradle-build/CONVERSION_REPORT.md\n\n\ud83d\udcc1 Generated files:\n   - .github/workflows/ci.yml\n   - CONVERSION_REPORT.html (INTERACTIVE)\n   - CONVERSION_REPORT.md\n   - .github/actions/test/action.yml\n   - .github/actions/checkout/action.yml\n   - .github/actions/build/action.yml\n   - .github/actions/package/action.yml\n\n\ud83d\udcca Conversion Summary:\n   - Stages converted: 4\n   - Composite actions created: 4\n   - Manual items requiring attention: 1\n   \u26a0\ufe0f  Check the interactive HTML report for detailed guidance\n\n\ud83c\udfaf Next Steps:\n   1. Open the interactive report: comprehensive-test-outputs/basic-gradle-build/CONVERSION_REPORT.html\n   2. Click on statistics to explore conversion details\n   3. Review stage-by-stage breakdown\n   4. Configure GitHub Secrets and Environments\n   5. Test the workflow with a sample commit\n\n\u2728 Conversion completed successfully!\n\ud83d\udcf1 Open CONVERSION_REPORT.html in your browser for an interactive experience!\n",
+      "stderr": "",
+      "files_generated": {
+        "workflow": true,
+        "html_report": true,
+        "md_report": true,
+        "actions_dir": true,
+        "action_count": 4
+      },
+      "errors": []
+    },
+    {
+      "name": "backend-python-django",
+      "category": "backend",
+      "pipeline": "python-django",
+      "jenkinsfile_path": "test-pipelines/backend/python-django/Jenkinsfile",
+      "expected_success": true,
+      "timestamp": "2025-09-05T00:01:50.310013",
+      "success": true,
+      "conversion_time": 0.064584,
+      "exit_code": 0,
+      "stdout": "Converting test-pipelines/backend/python-django/Jenkinsfile to GitHub Actions...\nAnalyzing pipeline structure and features...\nGenerating main workflow file...\n\u2705 Main workflow saved to: comprehensive-test-outputs/backend-python-django/.github/workflows/ci.yml\nGenerating interactive HTML report...\n\u2705 Interactive HTML report saved to: comprehensive-test-outputs/backend-python-django/CONVERSION_REPORT.html\nGenerating markdown report...\n\u2705 Markdown report saved to: comprehensive-test-outputs/backend-python-django/CONVERSION_REPORT.md\n\n\ud83d\udcc1 Generated files:\n   - .github/workflows/ci.yml\n   - CONVERSION_REPORT.html (INTERACTIVE)\n   - CONVERSION_REPORT.md\n   - .github/actions/setup-environment/action.yml\n   - .github/actions/lint/action.yml\n   - .github/actions/tests/action.yml\n   - .github/actions/database-setup/action.yml\n   - .github/actions/build-package/action.yml\n   - .github/actions/security-check/action.yml\n   - .github/actions/docker-build/action.yml\n   - .github/actions/type-check/action.yml\n\n\ud83d\udcca Conversion Summary:\n   - Stages converted: 8\n   - Composite actions created: 8\n   - Manual items requiring attention: 1\n   \u26a0\ufe0f  Check the interactive HTML report for detailed guidance\n\n\ud83c\udfaf Next Steps:\n   1. Open the interactive report: comprehensive-test-outputs/backend-python-django/CONVERSION_REPORT.html\n   2. Click on statistics to explore conversion details\n   3. Review stage-by-stage breakdown\n   4. Configure GitHub Secrets and Environments\n   5. Test the workflow with a sample commit\n\n\u2728 Conversion completed successfully!\n\ud83d\udcf1 Open CONVERSION_REPORT.html in your browser for an interactive experience!\n",
+      "stderr": "",
+      "files_generated": {
+        "workflow": true,
+        "html_report": true,
+        "md_report": true,
+        "actions_dir": true,
+        "action_count": 8
+      },
+      "errors": []
+    },
+    {
+      "name": "backend-java-spring",
+      "category": "backend",
+      "pipeline": "java-spring",
+      "jenkinsfile_path": "test-pipelines/backend/java-spring/Jenkinsfile",
+      "expected_success": true,
+      "timestamp": "2025-09-05T00:01:50.375063",
+      "success": true,
+      "conversion_time": 0.059444,
+      "exit_code": 0,
+      "stdout": "Converting test-pipelines/backend/java-spring/Jenkinsfile to GitHub Actions...\nAnalyzing pipeline structure and features...\nGenerating main workflow file...\n\u2705 Main workflow saved to: comprehensive-test-outputs/backend-java-spring/.github/workflows/ci.yml\nGenerating interactive HTML report...\n\u2705 Interactive HTML report saved to: comprehensive-test-outputs/backend-java-spring/CONVERSION_REPORT.html\nGenerating markdown report...\n\u2705 Markdown report saved to: comprehensive-test-outputs/backend-java-spring/CONVERSION_REPORT.md\n\n\ud83d\udcc1 Generated files:\n   - .github/workflows/ci.yml\n   - CONVERSION_REPORT.html (INTERACTIVE)\n   - CONVERSION_REPORT.md\n   - .github/actions/unit-tests/action.yml\n   - .github/actions/integration-tests/action.yml\n   - .github/actions/quality-gate/action.yml\n   - .github/actions/sonarqube-analysis/action.yml\n   - .github/actions/compile/action.yml\n   - .github/actions/docker-build/action.yml\n   - .github/actions/package/action.yml\n\n\ud83d\udcca Conversion Summary:\n   - Stages converted: 7\n   - Composite actions created: 7\n   - Manual items requiring attention: 2\n   \u26a0\ufe0f  Check the interactive HTML report for detailed guidance\n\n\ud83c\udfaf Next Steps:\n   1. Open the interactive report: comprehensive-test-outputs/backend-java-spring/CONVERSION_REPORT.html\n   2. Click on statistics to explore conversion details\n   3. Review stage-by-stage breakdown\n   4. Configure GitHub Secrets and Environments\n   5. Test the workflow with a sample commit\n\n\u2728 Conversion completed successfully!\n\ud83d\udcf1 Open CONVERSION_REPORT.html in your browser for an interactive experience!\n",
+      "stderr": "",
+      "files_generated": {
+        "workflow": true,
+        "html_report": true,
+        "md_report": true,
+        "actions_dir": true,
+        "action_count": 7
+      },
+      "errors": []
+    },
+    {
+      "name": "kubernetes-blue-green",
+      "category": "kubernetes",
+      "pipeline": "blue-green",
+      "jenkinsfile_path": "test-pipelines/kubernetes/blue-green/Jenkinsfile",
+      "expected_success": true,
+      "timestamp": "2025-09-05T00:01:50.434940",
+      "success": true,
+      "conversion_time": 0.060285,
+      "exit_code": 0,
+      "stdout": "Converting test-pipelines/kubernetes/blue-green/Jenkinsfile to GitHub Actions...\nAnalyzing pipeline structure and features...\nGenerating main workflow file...\n\u2705 Main workflow saved to: comprehensive-test-outputs/kubernetes-blue-green/.github/workflows/ci.yml\nGenerating interactive HTML report...\n\u2705 Interactive HTML report saved to: comprehensive-test-outputs/kubernetes-blue-green/CONVERSION_REPORT.html\nGenerating markdown report...\n\u2705 Markdown report saved to: comprehensive-test-outputs/kubernetes-blue-green/CONVERSION_REPORT.md\n\n\ud83d\udcc1 Generated files:\n   - .github/workflows/ci.yml\n   - CONVERSION_REPORT.html (INTERACTIVE)\n   - CONVERSION_REPORT.md\n   - .github/actions/health-check-new-version/action.yml\n   - .github/actions/verify-traffic-switch/action.yml\n   - .github/actions/deploy-new-version/action.yml\n   - .github/actions/switch-traffic/action.yml\n   - .github/actions/smoke-tests/action.yml\n   - .github/actions/cleanup-old-version/action.yml\n\n\ud83d\udcca Conversion Summary:\n   - Stages converted: 6\n   - Composite actions created: 6\n   \u2705 No manual conversion required\n\n\ud83c\udfaf Next Steps:\n   1. Open the interactive report: comprehensive-test-outputs/kubernetes-blue-green/CONVERSION_REPORT.html\n   2. Click on statistics to explore conversion details\n   3. Review stage-by-stage breakdown\n   4. Configure GitHub Secrets and Environments\n   5. Test the workflow with a sample commit\n\n\u2728 Conversion completed successfully!\n\ud83d\udcf1 Open CONVERSION_REPORT.html in your browser for an interactive experience!\n",
+      "stderr": "",
+      "files_generated": {
+        "workflow": true,
+        "html_report": true,
+        "md_report": true,
+        "actions_dir": true,
+        "action_count": 6
+      },
+      "errors": []
+    },
+    {
+      "name": "kubernetes-kubectl-deploy",
+      "category": "kubernetes",
+      "pipeline": "kubectl-deploy",
+      "jenkinsfile_path": "test-pipelines/kubernetes/kubectl-deploy/Jenkinsfile",
+      "expected_success": true,
+      "timestamp": "2025-09-05T00:01:50.495686",
+      "success": true,
+      "conversion_time": 0.054405,
+      "exit_code": 0,
+      "stdout": "Converting test-pipelines/kubernetes/kubectl-deploy/Jenkinsfile to GitHub Actions...\nAnalyzing pipeline structure and features...\nGenerating main workflow file...\n\u2705 Main workflow saved to: comprehensive-test-outputs/kubernetes-kubectl-deploy/.github/workflows/ci.yml\nGenerating interactive HTML report...\n\u2705 Interactive HTML report saved to: comprehensive-test-outputs/kubernetes-kubectl-deploy/CONVERSION_REPORT.html\nGenerating markdown report...\n\u2705 Markdown report saved to: comprehensive-test-outputs/kubernetes-kubectl-deploy/CONVERSION_REPORT.md\n\n\ud83d\udcc1 Generated files:\n   - .github/workflows/ci.yml\n   - CONVERSION_REPORT.html (INTERACTIVE)\n   - CONVERSION_REPORT.md\n   - .github/actions/apply-configmaps/action.yml\n   - .github/actions/deploy-application/action.yml\n   - .github/actions/update-ingress/action.yml\n   - .github/actions/verify-deployment/action.yml\n\n\ud83d\udcca Conversion Summary:\n   - Stages converted: 4\n   - Composite actions created: 4\n   \u2705 No manual conversion required\n\n\ud83c\udfaf Next Steps:\n   1. Open the interactive report: comprehensive-test-outputs/kubernetes-kubectl-deploy/CONVERSION_REPORT.html\n   2. Click on statistics to explore conversion details\n   3. Review stage-by-stage breakdown\n   4. Configure GitHub Secrets and Environments\n   5. Test the workflow with a sample commit\n\n\u2728 Conversion completed successfully!\n\ud83d\udcf1 Open CONVERSION_REPORT.html in your browser for an interactive experience!\n",
+      "stderr": "",
+      "files_generated": {
+        "workflow": true,
+        "html_report": true,
+        "md_report": true,
+        "actions_dir": true,
+        "action_count": 4
+      },
+      "errors": []
+    },
+    {
+      "name": "kubernetes-helm-deploy",
+      "category": "kubernetes",
+      "pipeline": "helm-deploy",
+      "jenkinsfile_path": "test-pipelines/kubernetes/helm-deploy/Jenkinsfile",
+      "expected_success": true,
+      "timestamp": "2025-09-05T00:01:50.550556",
+      "success": true,
+      "conversion_time": 0.056373,
+      "exit_code": 0,
+      "stdout": "Converting test-pipelines/kubernetes/helm-deploy/Jenkinsfile to GitHub Actions...\nAnalyzing pipeline structure and features...\nGenerating main workflow file...\n\u2705 Main workflow saved to: comprehensive-test-outputs/kubernetes-helm-deploy/.github/workflows/ci.yml\nGenerating interactive HTML report...\n\u2705 Interactive HTML report saved to: comprehensive-test-outputs/kubernetes-helm-deploy/CONVERSION_REPORT.html\nGenerating markdown report...\n\u2705 Markdown report saved to: comprehensive-test-outputs/kubernetes-helm-deploy/CONVERSION_REPORT.md\n\n\ud83d\udcc1 Generated files:\n   - .github/workflows/ci.yml\n   - CONVERSION_REPORT.html (INTERACTIVE)\n   - CONVERSION_REPORT.md\n   - .github/actions/validate-kubernetes-config/action.yml\n   - .github/actions/smoke-tests/action.yml\n   - .github/actions/checkout/action.yml\n   - .github/actions/deploy-to-kubernetes/action.yml\n   - .github/actions/production-approval/action.yml\n   - .github/actions/database-migration/action.yml\n\n\ud83d\udcca Conversion Summary:\n   - Stages converted: 6\n   - Composite actions created: 6\n   - Manual items requiring attention: 1\n   \u26a0\ufe0f  Check the interactive HTML report for detailed guidance\n\n\ud83c\udfaf Next Steps:\n   1. Open the interactive report: comprehensive-test-outputs/kubernetes-helm-deploy/CONVERSION_REPORT.html\n   2. Click on statistics to explore conversion details\n   3. Review stage-by-stage breakdown\n   4. Configure GitHub Secrets and Environments\n   5. Test the workflow with a sample commit\n\n\u2728 Conversion completed successfully!\n\ud83d\udcf1 Open CONVERSION_REPORT.html in your browser for an interactive experience!\n",
+      "stderr": "",
+      "files_generated": {
+        "workflow": true,
+        "html_report": true,
+        "md_report": true,
+        "actions_dir": true,
+        "action_count": 6
+      },
+      "errors": []
+    }
+  ],
+  "generated_at": "2025-09-05T00:01:50.607199"
+}

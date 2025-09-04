@@ -1,0 +1,19 @@
+name: Integration Tests Action
+description: Enhanced composite action for Integration Tests stage with comprehensive Jenkins feature support
+inputs: {}
+runs:
+  using: composite
+  steps:
+  - name: Run command 1
+    run: docker-compose up -d
+    shell: bash
+  - name: Run command 2
+    run: sleep 30
+    shell: bash
+  - name: Run command 3
+    run: curl -f http://localhost:8080/health
+    shell: bash
+  - name: Post always command 1
+    if: always()
+    run: docker-compose down
+    shell: bash

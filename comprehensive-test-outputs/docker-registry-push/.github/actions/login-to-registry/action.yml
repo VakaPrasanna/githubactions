@@ -1,0 +1,43 @@
+name: Login to Registry Action
+description: Enhanced composite action for Login to Registry stage with comprehensive Jenkins feature support
+inputs:
+  docker-username:
+    description: Docker registry username
+    required: 'true'
+  docker-password:
+    description: Docker registry password
+    required: 'true'
+  registry-cred-username:
+    description: Registry credential username for login command
+    required: 'false'
+  registry-cred-password:
+    description: Registry credential password for login command
+    required: 'false'
+  registry:
+    description: Docker registry URL
+    required: false
+    default: docker.io
+  image-name:
+    description: Docker image name
+    required: true
+  build-tag:
+    description: Docker build tag
+    required: false
+    default: latest
+runs:
+  using: composite
+  steps:
+  - name: Login to DockerHub
+    uses: docker/login-action@v3
+    with:
+      username: ${{ inputs.docker-username }}
+      password: ${{ inputs.docker-password }}
+  - name: Run command 1
+    run: aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin ${DOCKER_REGISTRY}
+    shell: bash
+  - name: Run command 2
+    run: echo
+    shell: bash
+  - name: Run command 3
+    run: echo $REGISTRY_CREDS_PSW
+    shell: bash

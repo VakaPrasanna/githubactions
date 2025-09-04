@@ -1,0 +1,18 @@
+name: Setup Environment Action
+description: Enhanced composite action for Setup Environment stage with comprehensive Jenkins feature support
+inputs: {}
+runs:
+  using: composite
+  steps:
+  - name: Run command 1
+    run: python --version
+    shell: bash
+  - name: Run command 2
+    run: pip install --upgrade pip
+    shell: bash
+  - name: Run command 3
+    run: pip install -r requirements.txt
+    shell: bash
+  - name: Run command 4
+    run: pip install -r requirements-dev.txt
+    shell: bash

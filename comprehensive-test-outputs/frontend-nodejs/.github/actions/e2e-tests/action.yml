@@ -1,0 +1,15 @@
+name: E2E Tests Action
+description: Enhanced composite action for E2E Tests stage with comprehensive Jenkins feature support
+inputs: {}
+runs:
+  using: composite
+  steps:
+  - name: Run command 1
+    run: npm run start:test &
+    shell: bash
+  - name: Run command 2
+    run: sleep 30
+    shell: bash
+  - name: Run command 3
+    run: npm run test:e2e
+    shell: bash

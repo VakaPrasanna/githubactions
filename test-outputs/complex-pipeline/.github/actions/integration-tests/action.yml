@@ -1,0 +1,16 @@
+name: Integration Tests Action
+description: Enhanced composite action for Integration Tests stage with comprehensive Jenkins feature support
+inputs: {}
+runs:
+  using: composite
+  steps:
+  - name: Run command 1
+    run: mvn test -Dtest=IntegrationTest*  -Dapp.url=https://staging.company.com  -Dspring.profiles.active=integration
+    shell: bash
+  - name: Publish test results (always)
+    if: always()
+    uses: dorny/test-reporter@v1
+    with:
+      name: Integration Tests Test Results
+      path: target/surefire-reports/TEST-*IntegrationTest*.xml
+      reporter: java-junit

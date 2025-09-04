@@ -1,0 +1,12 @@
+name: Security Audit Action
+description: Enhanced composite action for Security Audit stage with comprehensive Jenkins feature support
+inputs: {}
+runs:
+  using: composite
+  steps:
+  - name: Run command 1
+    run: npm audit --audit-level=high
+    shell: bash
+  - name: Run command 2
+    run: npx retire --outputformat=json --outputpath=retire-report.json || true
+    shell: bash

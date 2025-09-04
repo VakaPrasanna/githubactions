@@ -1,0 +1,12 @@
+name: Security Check Action
+description: Enhanced composite action for Security Check stage with comprehensive Jenkins feature support
+inputs: {}
+runs:
+  using: composite
+  steps:
+  - name: Run command 1
+    run: bandit -r myproject/ -f json -o bandit-report.json || true
+    shell: bash
+  - name: Run command 2
+    run: safety check --json --output safety-report.json || true
+    shell: bash

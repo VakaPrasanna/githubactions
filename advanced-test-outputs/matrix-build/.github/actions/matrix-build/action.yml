@@ -1,0 +1,17 @@
+name: Matrix Build Action
+description: Enhanced composite action for Matrix Build stage with comprehensive Jenkins feature support
+inputs: {}
+runs:
+  using: composite
+  steps:
+  - name: Set up JDK
+    uses: actions/setup-java@v4
+    with:
+      java-version: '17'
+      distribution: temurin
+  - name: Run command 1
+    run: java -version
+    shell: bash
+  - name: Run command 2
+    run: mvn clean test
+    shell: bash

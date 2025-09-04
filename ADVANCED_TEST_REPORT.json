@@ -1,0 +1,440 @@
+{
+  "test_summary": {
+    "total_tests": 10,
+    "passed_tests": 9,
+    "failed_tests": 1,
+    "success_rate": 90.0,
+    "average_conversion_time": 0.061507400000000004
+  },
+  "test_results": [
+    {
+      "test_name": "simple-maven",
+      "jenkinsfile": "test-jenkinsfiles/simple-maven.Jenkinsfile",
+      "timestamp": "2025-09-04T23:51:09.130641",
+      "success": true,
+      "conversion_time": 0.067113,
+      "workflow_analysis": {
+        "jobs_count": 5,
+        "has_permissions": true,
+        "has_env": false,
+        "has_workflow_dispatch": false,
+        "has_inputs": false,
+        "trigger_types": [
+          "push",
+          "pull_request"
+        ],
+        "jobs_with_timeout": 5,
+        "jobs_with_environment": 0,
+        "jobs_with_needs": 4,
+        "total_steps": 10,
+        "composite_action_usage": 4
+      },
+      "actions_analysis": {
+        "total_actions": 4,
+        "actions_with_inputs": 0,
+        "actions_with_outputs": 0,
+        "actions_with_secrets": 0,
+        "total_steps": 5,
+        "shell_usage": {
+          "bash": 3,
+          "sh": 0,
+          "powershell": 0,
+          "cmd": 0
+        },
+        "action_types": {
+          "dorny/test-reporter": 1,
+          "actions/checkout": 1
+        }
+      },
+      "file_sizes": {
+        "workflow": 1455,
+        "html_report": 49240,
+        "md_report": 1051
+      },
+      "errors": []
+    },
+    {
+      "test_name": "docker-build",
+      "jenkinsfile": "test-jenkinsfiles/docker-build.Jenkinsfile",
+      "timestamp": "2025-09-04T23:51:09.204215",
+      "success": true,
+      "conversion_time": 0.059377,
+      "workflow_analysis": {
+        "jobs_count": 5,
+        "has_permissions": true,
+        "has_env": true,
+        "has_workflow_dispatch": true,
+        "has_inputs": true,
+        "trigger_types": [
+          "push",
+          "pull_request",
+          "workflow_dispatch"
+        ],
+        "jobs_with_timeout": 5,
+        "jobs_with_environment": 0,
+        "jobs_with_needs": 4,
+        "total_steps": 11,
+        "composite_action_usage": 4
+      },
+      "actions_analysis": {
+        "total_actions": 4,
+        "actions_with_inputs": 3,
+        "actions_with_outputs": 0,
+        "actions_with_secrets": 0,
+        "total_steps": 4,
+        "shell_usage": {
+          "bash": 3,
+          "sh": 0,
+          "powershell": 0,
+          "cmd": 0
+        },
+        "action_types": {
+          "actions/checkout": 1
+        }
+      },
+      "file_sizes": {
+        "workflow": 2429,
+        "html_report": 52927,
+        "md_report": 1087
+      },
+      "errors": []
+    },
+    {
+      "test_name": "parallel-stages",
+      "jenkinsfile": "test-jenkinsfiles/parallel-stages.Jenkinsfile",
+      "timestamp": "2025-09-04T23:51:09.270895",
+      "success": true,
+      "conversion_time": 0.057788,
+      "workflow_analysis": {
+        "jobs_count": 6,
+        "has_permissions": true,
+        "has_env": true,
+        "has_workflow_dispatch": false,
+        "has_inputs": false,
+        "trigger_types": [
+          "push",
+          "pull_request"
+        ],
+        "jobs_with_timeout": 6,
+        "jobs_with_environment": 0,
+        "jobs_with_needs": 5,
+        "total_steps": 12,
+        "composite_action_usage": 5
+      },
+      "actions_analysis": {
+        "total_actions": 5,
+        "actions_with_inputs": 0,
+        "actions_with_outputs": 0,
+        "actions_with_secrets": 0,
+        "total_steps": 13,
+        "shell_usage": {
+          "bash": 11,
+          "sh": 0,
+          "powershell": 0,
+          "cmd": 0
+        },
+        "action_types": {
+          "dorny/test-reporter": 1,
+          "actions/checkout": 1
+        }
+      },
+      "file_sizes": {
+        "workflow": 2649,
+        "html_report": 58592,
+        "md_report": 1121
+      },
+      "errors": []
+    },
+    {
+      "test_name": "kubernetes-deploy",
+      "jenkinsfile": "test-jenkinsfiles/kubernetes-deploy.Jenkinsfile",
+      "timestamp": "2025-09-04T23:51:09.337702",
+      "success": true,
+      "conversion_time": 0.057879,
+      "workflow_analysis": {
+        "jobs_count": 7,
+        "has_permissions": true,
+        "has_env": true,
+        "has_workflow_dispatch": true,
+        "has_inputs": true,
+        "trigger_types": [
+          "push",
+          "pull_request",
+          "workflow_dispatch"
+        ],
+        "jobs_with_timeout": 7,
+        "jobs_with_environment": 0,
+        "jobs_with_needs": 6,
+        "total_steps": 15,
+        "composite_action_usage": 6
+      },
+      "actions_analysis": {
+        "total_actions": 6,
+        "actions_with_inputs": 1,
+        "actions_with_outputs": 0,
+        "actions_with_secrets": 0,
+        "total_steps": 17,
+        "shell_usage": {
+          "bash": 16,
+          "sh": 0,
+          "powershell": 0,
+          "cmd": 0
+        },
+        "action_types": {
+          "actions/checkout": 1
+        }
+      },
+      "file_sizes": {
+        "workflow": 3661,
+        "html_report": 62989,
+        "md_report": 1199
+      },
+      "errors": []
+    },
+    {
+      "test_name": "complex-pipeline",
+      "jenkinsfile": "test-jenkinsfiles/complex-pipeline.Jenkinsfile",
+      "timestamp": "2025-09-04T23:51:09.407204",
+      "success": true,
+      "conversion_time": 0.084103,
+      "workflow_analysis": {
+        "jobs_count": 14,
+        "has_permissions": true,
+        "has_env": true,
+        "has_workflow_dispatch": true,
+        "has_inputs": true,
+        "trigger_types": [
+          "push",
+          "pull_request",
+          "workflow_dispatch"
+        ],
+        "jobs_with_timeout": 14,
+        "jobs_with_environment": 0,
+        "jobs_with_needs": 13,
+        "total_steps": 28,
+        "composite_action_usage": 13
+      },
+      "actions_analysis": {
+        "total_actions": 13,
+        "actions_with_inputs": 4,
+        "actions_with_outputs": 0,
+        "actions_with_secrets": 0,
+        "total_steps": 40,
+        "shell_usage": {
+          "bash": 39,
+          "sh": 0,
+          "powershell": 0,
+          "cmd": 0
+        },
+        "action_types": {
+          "dorny/test-reporter": 1
+        }
+      },
+      "file_sizes": {
+        "workflow": 6472,
+        "html_report": 105657,
+        "md_report": 1467
+      },
+      "errors": []
+    },
+    {
+      "test_name": "nodejs-pipeline",
+      "jenkinsfile": "test-jenkinsfiles/nodejs-pipeline.Jenkinsfile",
+      "timestamp": "2025-09-04T23:51:09.514988",
+      "success": true,
+      "conversion_time": 0.072118,
+      "workflow_analysis": {
+        "jobs_count": 10,
+        "has_permissions": true,
+        "has_env": true,
+        "has_workflow_dispatch": true,
+        "has_inputs": true,
+        "trigger_types": [
+          "push",
+          "pull_request",
+          "workflow_dispatch"
+        ],
+        "jobs_with_timeout": 10,
+        "jobs_with_environment": 0,
+        "jobs_with_needs": 9,
+        "total_steps": 20,
+        "composite_action_usage": 9
+      },
+      "actions_analysis": {
+        "total_actions": 9,
+        "actions_with_inputs": 0,
+        "actions_with_outputs": 0,
+        "actions_with_secrets": 0,
+        "total_steps": 19,
+        "shell_usage": {
+          "bash": 18,
+          "sh": 0,
+          "powershell": 0,
+          "cmd": 0
+        },
+        "action_types": {
+          "dorny/test-reporter": 1
+        }
+      },
+      "file_sizes": {
+        "workflow": 4990,
+        "html_report": 72922,
+        "md_report": 1228
+      },
+      "errors": []
+    },
+    {
+      "test_name": "matrix-build",
+      "jenkinsfile": "test-jenkinsfiles/matrix-build.Jenkinsfile",
+      "timestamp": "2025-09-04T23:51:09.602711",
+      "success": true,
+      "conversion_time": 0.057011,
+      "workflow_analysis": {
+        "jobs_count": 2,
+        "has_permissions": true,
+        "has_env": false,
+        "has_workflow_dispatch": true,
+        "has_inputs": true,
+        "trigger_types": [
+          "push",
+          "pull_request",
+          "workflow_dispatch"
+        ],
+        "jobs_with_timeout": 2,
+        "jobs_with_environment": 0,
+        "jobs_with_needs": 1,
+        "total_steps": 4,
+        "composite_action_usage": 2
+      },
+      "actions_analysis": {
+        "total_actions": 2,
+        "actions_with_inputs": 0,
+        "actions_with_outputs": 0,
+        "actions_with_secrets": 0,
+        "total_steps": 4,
+        "shell_usage": {
+          "bash": 3,
+          "sh": 0,
+          "powershell": 0,
+          "cmd": 0
+        },
+        "action_types": {
+          "actions/setup-java": 1
+        }
+      },
+      "file_sizes": {
+        "workflow": 903,
+        "html_report": 42042,
+        "md_report": 1016
+      },
+      "errors": []
+    },
+    {
+      "test_name": "scripted-pipeline",
+      "jenkinsfile": "test-jenkinsfiles/scripted-pipeline.Jenkinsfile",
+      "timestamp": "2025-09-04T23:51:09.664126",
+      "success": false,
+      "conversion_time": 0.045523,
+      "workflow_analysis": {},
+      "actions_analysis": {},
+      "file_sizes": {},
+      "errors": [
+        "Non-zero exit code: 1"
+      ]
+    },
+    {
+      "test_name": "minimal-pipeline",
+      "jenkinsfile": "test-jenkinsfiles/minimal-pipeline.Jenkinsfile",
+      "timestamp": "2025-09-04T23:51:09.710043",
+      "success": true,
+      "conversion_time": 0.048344,
+      "workflow_analysis": {
+        "jobs_count": 1,
+        "has_permissions": true,
+        "has_env": false,
+        "has_workflow_dispatch": false,
+        "has_inputs": false,
+        "trigger_types": [
+          "push",
+          "pull_request"
+        ],
+        "jobs_with_timeout": 1,
+        "jobs_with_environment": 0,
+        "jobs_with_needs": 0,
+        "total_steps": 2,
+        "composite_action_usage": 1
+      },
+      "actions_analysis": {
+        "total_actions": 1,
+        "actions_with_inputs": 0,
+        "actions_with_outputs": 0,
+        "actions_with_secrets": 0,
+        "total_steps": 1,
+        "shell_usage": {
+          "bash": 1,
+          "sh": 0,
+          "powershell": 0,
+          "cmd": 0
+        },
+        "action_types": {}
+      },
+      "file_sizes": {
+        "workflow": 427,
+        "html_report": 37507,
+        "md_report": 969
+      },
+      "errors": []
+    },
+    {
+      "test_name": "original-jenkinsfile",
+      "jenkinsfile": "Jenkinsfile",
+      "timestamp": "2025-09-04T23:51:09.760500",
+      "success": true,
+      "conversion_time": 0.065818,
+      "workflow_analysis": {
+        "jobs_count": 11,
+        "has_permissions": true,
+        "has_env": true,
+        "has_workflow_dispatch": true,
+        "has_inputs": true,
+        "trigger_types": [
+          "push",
+          "pull_request",
+          "workflow_dispatch"
+        ],
+        "jobs_with_timeout": 11,
+        "jobs_with_environment": 0,
+        "jobs_with_needs": 10,
+        "total_steps": 22,
+        "composite_action_usage": 10
+      },
+      "actions_analysis": {
+        "total_actions": 10,
+        "actions_with_inputs": 5,
+        "actions_with_outputs": 0,
+        "actions_with_secrets": 1,
+        "total_steps": 28,
+        "shell_usage": {
+          "bash": 23,
+          "sh": 0,
+          "powershell": 0,
+          "cmd": 0
+        },
+        "action_types": {
+          "actions/setup-java": 1,
+          "actions/cache": 1,
+          "docker/login-action": 1,
+          "actions/checkout": 1,
+          "dorny/test-reporter": 1
+        }
+      },
+      "file_sizes": {
+        "workflow": 5310,
+        "html_report": 84652,
+        "md_report": 1371
+      },
+      "errors": []
+    }
+  ],
+  "generated_at": "2025-09-04T23:51:09.844930"
+}

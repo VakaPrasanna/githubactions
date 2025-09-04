@@ -1,0 +1,11 @@
+name: Checkout Action
+description: Enhanced composite action for Checkout stage with comprehensive Jenkins feature support
+inputs: {}
+runs:
+  using: composite
+  steps:
+  - name: Checkout code
+    uses: actions/checkout@v4
+    with:
+      repository: example/repo
+      ref: main

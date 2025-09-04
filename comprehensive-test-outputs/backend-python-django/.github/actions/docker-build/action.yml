@@ -1,0 +1,6 @@
+name: Docker Build Action
+description: Enhanced composite action for Docker Build stage with comprehensive Jenkins feature support
+inputs: {}
+runs:
+  using: composite
+  steps: []

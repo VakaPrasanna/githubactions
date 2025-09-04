@@ -1,0 +1,18 @@
+name: Static Analysis Action
+description: Enhanced composite action for Static Analysis stage with comprehensive Jenkins feature support
+inputs:
+  sonar-token:
+    description: SonarQube authentication token
+    required: 'true'
+  sonar-host-url:
+    description: SonarQube server URL
+    required: 'true'
+runs:
+  using: composite
+  steps:
+  - name: Run SonarQube analysis
+    run: mvn sonar:sonar  -Dsonar.projectKey=${APP_NAME}  -Dsonar.projectVersion=${BUILD_VERSION}
+    shell: bash
+    env:
+      SONAR_TOKEN: ${{ inputs.sonar-token }}
+      SONAR_HOST_URL: ${{ inputs.sonar-host-url }}

@@ -1,0 +1,12 @@
+name: Deploy New Version Action
+description: Enhanced composite action for Deploy New Version stage with comprehensive Jenkins feature support
+inputs: {}
+runs:
+  using: composite
+  steps:
+  - name: Run command 1
+    run: helm upgrade --install ${APP_NAME}-${NEW_COLOR} ./helm/myapp  --namespace ${NAMESPACE}  --set image.tag=${{ github.run_number }}  --set deployment.color=${NEW_COLOR}  --set service.selector.color=${NEW_COLOR}  --wait --timeout=10m
+    shell: bash
+  - name: Run Kubernetes command 1
+    run: helm upgrade --install ${APP_NAME}-${NEW_COLOR} ./helm/myapp \
+    shell: bash

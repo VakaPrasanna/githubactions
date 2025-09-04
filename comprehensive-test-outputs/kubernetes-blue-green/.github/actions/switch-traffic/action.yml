@@ -1,0 +1,24 @@
+name: Switch Traffic Action
+description: Enhanced composite action for Switch Traffic stage with comprehensive Jenkins feature support
+inputs: {}
+runs:
+  using: composite
+  steps:
+  - name: Run command 1
+    run: kubectl patch service ${APP_NAME} -n ${NAMESPACE}  -p '{"spec":{"selector":{"color":"'${NEW_COLOR}'"}}}'
+    shell: bash
+  - name: Run command 2
+    run: kubectl annotate ingress ${APP_NAME}  deployment.color=${NEW_COLOR}  -n ${NAMESPACE} --overwrite
+    shell: bash
+  - name: Run Kubernetes command 1
+    run: kubectl patch service ${APP_NAME} -n ${NAMESPACE} \
+    shell: bash
+  - name: Run Kubernetes command 2
+    run: kubectl annotate ingress ${APP_NAME} \
+    shell: bash
+  - name: Run Kubernetes command 3
+    run: kubectl patch service ${APP_NAME} -n ${NAMESPACE}  -p '{"spec":{"selector":{"color":"'${NEW_COLOR}'"}}}'
+    shell: bash
+  - name: Run Kubernetes command 4
+    run: kubectl annotate ingress ${APP_NAME}  deployment.color=${NEW_COLOR}  -n ${NAMESPACE} --overwrite
+    shell: bash

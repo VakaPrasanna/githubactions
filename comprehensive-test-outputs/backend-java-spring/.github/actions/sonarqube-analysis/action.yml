@@ -1,0 +1,18 @@
+name: SonarQube Analysis Action
+description: Enhanced composite action for SonarQube Analysis stage with comprehensive Jenkins feature support
+inputs:
+  sonar-token:
+    description: SonarQube authentication token
+    required: 'true'
+  sonar-host-url:
+    description: SonarQube server URL
+    required: 'true'
+runs:
+  using: composite
+  steps:
+  - name: Run SonarQube analysis
+    run: mvn sonar:sonar  -Dsonar.projectKey=spring-app  -Dsonar.projectName=spring-app  -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
+    shell: bash
+    env:
+      SONAR_TOKEN: ${{ inputs.sonar-token }}
+      SONAR_HOST_URL: ${{ inputs.sonar-host-url }}

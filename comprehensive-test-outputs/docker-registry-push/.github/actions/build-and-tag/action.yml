@@ -1,0 +1,12 @@
+name: Build and Tag Action
+description: Enhanced composite action for Build and Tag stage with comprehensive Jenkins feature support
+inputs: {}
+runs:
+  using: composite
+  steps:
+  - name: Run command 1
+    run: git rev-parse --short HEAD
+    shell: bash
+  - name: Script block 1 (REQUIRES MANUAL CONVERSION)
+    run: "\n# MANUAL CONVERSION REQUIRED: Complex script block\n# Original Jenkins feature: def image = docker.build(\"${DOCKER_REGISTRY}/${DOCKER_REPO}:${BUILD_NUMBER}\")\n                    \n                    if (params.LATEST_TAG) {\n                        image.tag('latest')\n            \n# Action needed: Review Jenkins documentation and implement equivalent logic\n# TODO: Implement this functionality manually\n"
+    shell: bash

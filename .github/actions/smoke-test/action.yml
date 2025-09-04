@@ -1,0 +1,21 @@
+name: Smoke Test Action
+description: Enhanced composite action for Smoke Test stage with comprehensive Jenkins feature support
+inputs:
+  deploy-env:
+    description: Parameter DEPLOY_ENV
+    required: true
+  app-name:
+    description: Parameter APP_NAME
+    required: true
+runs:
+  using: composite
+  steps:
+  - name: Run command 1
+    run: echo "Running smoke test against ${{ inputs.DEPLOY_ENV }}..."
+    shell: bash
+  - name: Run command 2
+    run: curl -s http://${{ inputs.APP_NAME }}.${{ inputs.DEPLOY_ENV }}.example.com/actuator/health | grep UP
+    shell: bash
+  - name: Run command 3
+    run: echo Running smoke test against ${{ inputs.DEPLOY_ENV }}...
+    shell: bash

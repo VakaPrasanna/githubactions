@@ -1,0 +1,12 @@
+name: Security Audit Action
+description: Enhanced composite action for Security Audit stage with comprehensive Jenkins feature support
+inputs: {}
+runs:
+  using: composite
+  steps:
+  - name: Run command 1
+    run: npm audit --audit-level=moderate --json > audit-report.json || true
+    shell: bash
+  - name: Run command 2
+    run: npx audit-ci --moderate
+    shell: bash

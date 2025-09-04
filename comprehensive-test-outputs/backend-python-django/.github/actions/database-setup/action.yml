@@ -1,0 +1,12 @@
+name: Database Setup Action
+description: Enhanced composite action for Database Setup stage with comprehensive Jenkins feature support
+inputs: {}
+runs:
+  using: composite
+  steps:
+  - name: Run command 1
+    run: python manage.py migrate --settings=myproject.settings.test
+    shell: bash
+  - name: Run command 2
+    run: python manage.py collectstatic --noinput --settings=myproject.settings.test
+    shell: bash

@@ -1,0 +1,9 @@
+name: Package Action
+description: Enhanced composite action for Package stage with comprehensive Jenkins feature support
+inputs: {}
+runs:
+  using: composite
+  steps:
+  - name: Run command 1
+    run: ./gradlew bootJar
+    shell: bash

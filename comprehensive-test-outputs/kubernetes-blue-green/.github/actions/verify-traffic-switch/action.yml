@@ -1,0 +1,21 @@
+name: Verify Traffic Switch Action
+description: Enhanced composite action for Verify Traffic Switch stage with comprehensive Jenkins feature support
+inputs: {}
+runs:
+  using: composite
+  steps:
+  - name: Run command 1
+    run: sleep 30
+    shell: bash
+  - name: Run command 2
+    run: EXTERNAL_URL=$(kubectl get ingress ${APP_NAME} -n ${NAMESPACE} -o jsonpath='{.spec.rules[0].host}')
+    shell: bash
+  - name: Run command 3
+    run: curl -f https://${EXTERNAL_URL}/health
+    shell: bash
+  - name: Run command 4
+    run: curl -f https://${EXTERNAL_URL}/api/version | grep ${{ github.run_number }}
+    shell: bash
+  - name: Run Kubernetes command 1
+    run: kubectl get ingress ${APP_NAME} -n ${NAMESPACE} -o jsonpath=
+    shell: bash

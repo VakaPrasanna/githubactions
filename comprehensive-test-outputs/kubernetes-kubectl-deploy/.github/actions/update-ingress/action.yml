@@ -1,0 +1,24 @@
+name: Update Ingress Action
+description: Enhanced composite action for Update Ingress stage with comprehensive Jenkins feature support
+inputs: {}
+runs:
+  using: composite
+  steps:
+  - name: Run command 1
+    run: kubectl apply -f k8s/ingress.yaml -n ${NAMESPACE}
+    shell: bash
+  - name: Run command 2
+    run: kubectl annotate ingress myapp  deployment.kubernetes.io/revision=${{ github.run_number }}  -n ${NAMESPACE} --overwrite
+    shell: bash
+  - name: Run Kubernetes command 1
+    run: kubectl apply -f k8s/ingress.yaml -n ${NAMESPACE}
+    shell: bash
+  - name: Run Kubernetes command 2
+    run: kubectl annotate ingress myapp \
+    shell: bash
+  - name: Run Kubernetes command 3
+    run: kubectl apply -f k8s/ingress.yaml -n ${NAMESPACE}
+    shell: bash
+  - name: Run Kubernetes command 4
+    run: kubectl annotate ingress myapp  deployment.kubernetes.io/revision=${{ github.run_number }}  -n ${NAMESPACE} --overwrite
+    shell: bash

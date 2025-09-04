@@ -1,0 +1,24 @@
+name: Apply ConfigMaps Action
+description: Enhanced composite action for Apply ConfigMaps stage with comprehensive Jenkins feature support
+inputs: {}
+runs:
+  using: composite
+  steps:
+  - name: Run command 1
+    run: kubectl apply -f k8s/configmap.yaml -n ${NAMESPACE}
+    shell: bash
+  - name: Run command 2
+    run: kubectl apply -f k8s/secrets.yaml -n ${NAMESPACE}
+    shell: bash
+  - name: Run Kubernetes command 1
+    run: kubectl apply -f k8s/configmap.yaml -n ${NAMESPACE}
+    shell: bash
+  - name: Run Kubernetes command 2
+    run: kubectl apply -f k8s/secrets.yaml -n ${NAMESPACE}
+    shell: bash
+  - name: Run Kubernetes command 3
+    run: kubectl apply -f k8s/configmap.yaml -n ${NAMESPACE}
+    shell: bash
+  - name: Run Kubernetes command 4
+    run: kubectl apply -f k8s/secrets.yaml -n ${NAMESPACE}
+    shell: bash

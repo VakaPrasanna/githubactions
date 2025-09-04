@@ -1,0 +1,26 @@
+name: Build Production Image Action
+description: Enhanced composite action for Build Production Image stage with comprehensive Jenkins feature support
+inputs:
+  registry:
+    description: Docker registry URL
+    required: false
+    default: docker.io
+  image-name:
+    description: Docker image name
+    required: true
+  build-tag:
+    description: Docker build tag
+    required: false
+    default: latest
+runs:
+  using: composite
+  steps:
+  - name: Build Docker image
+    run: docker build -t ${REGISTRY}/${APP_NAME}:${{ github.run_number }} .
+    shell: bash
+  - name: Build Docker image
+    run: docker build -t ${REGISTRY}/${APP_NAME}:${{ github.run_number }} .
+    shell: bash
+  - name: Run command 1
+    run: docker tag ${REGISTRY}/${APP_NAME}:${{ github.run_number }} ${REGISTRY}/${APP_NAME}:latest
+    shell: bash

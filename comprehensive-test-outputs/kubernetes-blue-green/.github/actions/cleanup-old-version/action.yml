@@ -1,0 +1,18 @@
+name: Cleanup Old Version Action
+description: Enhanced composite action for Cleanup Old Version stage with comprehensive Jenkins feature support
+inputs: {}
+runs:
+  using: composite
+  steps:
+  - name: Run command 1
+    run: kubectl scale deployment ${APP_NAME}-${OLD_COLOR}  --replicas=0 -n ${NAMESPACE}
+    shell: bash
+  - name: Run Kubernetes command 1
+    run: kubectl scale deployment ${APP_NAME}-${OLD_COLOR} \
+    shell: bash
+  - name: Run Kubernetes command 2
+    run: kubectl scale deployment ${APP_NAME}-${OLD_COLOR}  --replicas=0 -n ${NAMESPACE}
+    shell: bash
+  - name: Run Kubernetes command 3
+    run: helm uninstall ${APP_NAME}-${OLD_COLOR} -n ${NAMESPACE}
+    shell: bash

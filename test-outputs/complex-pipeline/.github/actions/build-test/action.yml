@@ -1,0 +1,12 @@
+name: Build & Test Action
+description: Enhanced composite action for Build & Test stage with comprehensive Jenkins feature support
+inputs: {}
+runs:
+  using: composite
+  steps:
+  - name: Run command 1
+    run: mvn clean package -DskipITs=false
+    shell: bash
+  - name: publishHTML (REQUIRES MANUAL CONVERSION)
+    run: "\n# MANUAL CONVERSION REQUIRED: publishHTML\n# Original Jenkins feature: publishHTML([\n                        allowMissing: true,\n                        alwaysLinkToLastBu\n# Action needed: Review Jenkins documentation and implement equivalent logic\n# TODO: Implement this functionality manually\n"
+    shell: bash

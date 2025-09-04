@@ -1,0 +1,9 @@
+name: Collect Results Action
+description: Enhanced composite action for Collect Results stage with comprehensive Jenkins feature support
+inputs: {}
+runs:
+  using: composite
+  steps:
+  - name: Run command 1
+    run: echo Collecting matrix build results
+    shell: bash

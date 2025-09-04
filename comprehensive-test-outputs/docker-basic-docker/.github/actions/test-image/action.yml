@@ -1,0 +1,15 @@
+name: Test Image Action
+description: Enhanced composite action for Test Image stage with comprehensive Jenkins feature support
+inputs:
+  tag:
+    description: Parameter TAG
+    required: true
+runs:
+  using: composite
+  steps:
+  - name: Run command 1
+    run: docker run --rm ${IMAGE_NAME}:${{ inputs.TAG }} /bin/sh -c "echo 'Testing container'"
+    shell: bash
+  - name: Run command 2
+    run: echo Testing container
+    shell: bash

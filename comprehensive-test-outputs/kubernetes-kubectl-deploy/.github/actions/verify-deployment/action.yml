@@ -1,0 +1,33 @@
+name: Verify Deployment Action
+description: Enhanced composite action for Verify Deployment stage with comprehensive Jenkins feature support
+inputs: {}
+runs:
+  using: composite
+  steps:
+  - name: Run command 1
+    run: kubectl get pods -l app=myapp -n ${NAMESPACE}
+    shell: bash
+  - name: Run command 2
+    run: kubectl get endpoints myapp -n ${NAMESPACE}
+    shell: bash
+  - name: Run command 3
+    run: kubectl run test-pod --rm -i --restart=Never  --image=curlimages/curl  -- curl -f http://myapp.${NAMESPACE}.svc.cluster.local:8080/health
+    shell: bash
+  - name: Run Kubernetes command 1
+    run: kubectl get pods -l app=myapp -n ${NAMESPACE}
+    shell: bash
+  - name: Run Kubernetes command 2
+    run: kubectl get endpoints myapp -n ${NAMESPACE}
+    shell: bash
+  - name: Run Kubernetes command 3
+    run: kubectl run test-pod --rm -i --restart=Never \
+    shell: bash
+  - name: Run Kubernetes command 4
+    run: kubectl get pods -l app=myapp -n ${NAMESPACE}
+    shell: bash
+  - name: Run Kubernetes command 5
+    run: kubectl get endpoints myapp -n ${NAMESPACE}
+    shell: bash
+  - name: Run Kubernetes command 6
+    run: kubectl run test-pod --rm -i --restart=Never  --image=curlimages/curl  -- curl -f http://myapp.${NAMESPACE}.svc.cluster.local:8080/health
+    shell: bash

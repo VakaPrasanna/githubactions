@@ -1,0 +1,21 @@
+name: Post-Deploy Validation Action
+description: Enhanced composite action for Post-Deploy Validation stage with comprehensive Jenkins feature support
+inputs: {}
+runs:
+  using: composite
+  steps:
+  - name: Run command 1
+    run: curl -f https://api.company.com/health
+    shell: bash
+  - name: Run command 2
+    run: curl -f https://api.company.com/version | grep ${BUILD_VERSION}
+    shell: bash
+  - name: Run command 3
+    run: kubectl exec -n production deployment/${APP_NAME} --  /app/scripts/db-check.sh
+    shell: bash
+  - name: Run Kubernetes command 1
+    run: kubectl exec -n production deployment/${APP_NAME} -- \
+    shell: bash
+  - name: Run Kubernetes command 2
+    run: kubectl exec -n production deployment/${APP_NAME} --  /app/scripts/db-check.sh
+    shell: bash
