@@ -149,7 +149,7 @@ jobs:
     - name: Run Deploy to Kubernetes
       uses: ./.github/actions/deploy-to-kubernetes
       with:
-        app-name: ${{ env.APP_NAME }}
+        app-name: complex-java-app
         container-name: complex-java-app-container
         deploy-env: dev
         image-name: prasannavaka81/githubactions1
