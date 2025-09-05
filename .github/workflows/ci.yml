@@ -151,7 +151,7 @@ jobs:
       with:
         app-name: ${{ env.APP_NAME }}
         container-name: complex-java-app-container
-        deploy-env: ${{ env.DEPLOY_ENV }}
+        deploy-env: dev
         image-name: prasannavaka81/githubactions1
         build-tag: ${{ github.sha }}
       timeout-minutes: 30
