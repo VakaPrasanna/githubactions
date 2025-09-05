@@ -97,7 +97,7 @@ jobs:
     continue-on-error: true
   security-scans:
     runs-on: ubuntu-latest
-    if: github.event_name == 'workflow_dispatch' && params.RUN_SECURITY_SCANS
+    if: github.event_name == 'workflow_dispatch' && inputs.RUN_SECURITY_SCANS
     needs: quality-gate
     timeout-minutes: 60
     steps:
