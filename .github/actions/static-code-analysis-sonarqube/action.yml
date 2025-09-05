@@ -19,3 +19,4 @@ runs:
     env:
       SONAR_TOKEN: ${{ inputs.sonar-token }}
       SONAR_HOST_URL: ${{ inputs.sonar-host-url }}
+    timeout-minutes: 15
