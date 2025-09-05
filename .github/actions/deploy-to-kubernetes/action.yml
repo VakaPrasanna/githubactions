@@ -7,6 +7,9 @@ inputs:
   deploy-env:
     description: Parameter DEPLOY_ENV
     required: true
+  container-name:
+    description: Container name inside the deployment
+    required: true
   image-name:
     description: Docker image name
     required: true
@@ -21,14 +24,9 @@ runs:
     run: export KUBECONFIG=$KCONFIG
     shell: bash
   - name: Run command 2
-    run: kubectl set image deployment/${{ inputs.app-name }} ${{ inputs.app-name }}=${{ inputs.image-name }}:${{ inputs.build-tag }} 
+    run: kubectl set image deployment/${{ inputs.app-name }} ${{ inputs.container-name }}=${{ inputs.image-name }}:${{ inputs.build-tag }} -n ${{ inputs.deploy-env }} 
     shell: bash
   - name: Run command 3
-    run: kubectl rollout status deployment/${{ inputs.app-name }} --timeout=5m
+    run: kubectl rollout status deployment/${{ inputs.app-name }} -n ${{ inputs.deploy-env }} --timeout=5m
     shell: bash
-  # - name: Run Kubernetes command 1
-  #   run: kubectl set image deployment/${{ inputs.app-name  }} ${{ inputs.app-name  }}=${{ inputs.image-name }}:${{ inputs.build-tag }} -n ${{ inputs.deploy-env }}
-  #   shell: bash
-  # - name: Run Kubernetes command 2
-  #   run: kubectl rollout status deployment/${{ inputs.app-name  }} -n ${{ inputs.deploy-env }} --timeout=5m
-  #   shell: bash
+ 
