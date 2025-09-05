@@ -39,7 +39,7 @@ name: CI Pipeline
         - prd
 env:
   REGISTRY: ghcr.io/your-org
-  IMAGE: ${{ env.REGISTRY }}/${{ inputs.APP_NAME }}
+  # IMAGE: ${{ env.REGISTRY }}/${{ inputs.APP_NAME }}
   SONARQUBE_SERVER: sonarqube-prod
   MAVEN_OPTS: -Dmaven.test.failure.ignore=false -DskipTests
 permissions:
@@ -118,7 +118,7 @@ jobs:
         docker-password: ${{ secrets.DOCKER_PASSWORD }}
         registry-cred-username: ${{ secrets.REGISTRY_CRED_USERNAME }}
         registry-cred-password: ${{ secrets.REGISTRY_CRED_PASSWORD }}
-        image-name: ${{ github.repository }}
+        image-name: ${{ env.REGISTRY }}/${{ inputs.APP_NAME }}
         build-tag: ${{ github.sha }}
         registry: docker.io
       timeout-minutes: 30
