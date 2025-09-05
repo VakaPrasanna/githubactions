@@ -150,6 +150,7 @@ jobs:
       uses: ./.github/actions/deploy-to-kubernetes
       with:
         image-name: prasannavaka81/githubactions1
+        build-tag: ${{ github.sha }}
       timeout-minutes: 30
     if: always() && (needs.quality-gate.result == 'success' || needs.quality-gate.result == 'failure')
   smoke-test:
