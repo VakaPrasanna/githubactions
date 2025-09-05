@@ -33,17 +33,17 @@ runs:
       username: ${{ inputs.docker-username }}
       password: ${{ inputs.docker-password }}
   - name: Build Docker image
-    run: docker build -t ${IMAGE}:${{ github.sha }} .
+    run: docker build -t ${{ inputs.image-name }}:${{ inputs.build-tag }} .
     shell: bash
-  - name: Build Docker image
-    run: docker build -t ${IMAGE}:${{ github.sha }} .
-    shell: bash
+  # - name: Build Docker image
+  #   run: docker build -t ${{ inputs.image-name }}:${{ inputs.bulid-tag }} .
+  #   shell: bash
   - name: Push Docker image
-    run: docker push ${IMAGE}:${{ github.sha }}
+    run: docker push ${{ inputs.image-name }}:${{ inputs.bulid-tag }}
     shell: bash
-  - name: Run command 1
-    run: echo "$REGISTRY_CRED_PSW" | docker login ${REGISTRY} -u "$REGISTRY_CRED_USR" --password-stdin
-    shell: bash
-  - name: Run command 2
-    run: echo $REGISTRY_CRED_PSW
-    shell: bash
+  # - name: Run command 1
+  #   run: echo "$REGISTRY_CRED_PSW" | docker login ${REGISTRY} -u "$REGISTRY_CRED_USR" --password-stdin
+  #   shell: bash
+  # - name: Run command 2
+  #   run: echo $REGISTRY_CRED_PSW
+  #   shell: bash
