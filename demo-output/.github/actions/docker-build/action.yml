@@ -1,9 +1,0 @@
-name: Docker Build Action
-description: Enhanced composite action for Docker Build stage with comprehensive Jenkins feature support
-inputs: {}
-runs:
-  using: composite
-  steps:
-  - name: Run command 1
-    run: trivy image --exit-code 0 --severity HIGH,CRITICAL ${DOCKER_REGISTRY}/${APP_NAME}:${BUILD_VERSION}
-    shell: bash

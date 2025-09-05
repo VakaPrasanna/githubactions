@@ -1,9 +1,0 @@
-name: Semgrep SAST Action
-description: Enhanced composite action for Semgrep SAST stage with comprehensive Jenkins feature support
-inputs: {}
-runs:
-  using: composite
-  steps:
-  - name: Run command 1
-    run: docker run --rm -v $(pwd):/src returntocorp/semgrep  --config=auto --json --output=semgrep-results.json /src
-    shell: bash

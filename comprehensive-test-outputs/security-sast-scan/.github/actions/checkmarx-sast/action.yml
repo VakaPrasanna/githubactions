@@ -1,9 +1,0 @@
-name: Checkmarx SAST Action
-description: Enhanced composite action for Checkmarx SAST stage with comprehensive Jenkins feature support
-inputs: {}
-runs:
-  using: composite
-  steps:
-  - name: Run command 1
-    run: cx scan create  --project-name "MyProject"  --source-dir .  --format json  --output-path checkmarx-results.json
-    shell: bash

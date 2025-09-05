@@ -1,9 +1,0 @@
-name: Compile Action
-description: Enhanced composite action for Compile stage with comprehensive Jenkins feature support
-inputs: {}
-runs:
-  using: composite
-  steps:
-  - name: Run command 1
-    run: mvn clean compile
-    shell: bash

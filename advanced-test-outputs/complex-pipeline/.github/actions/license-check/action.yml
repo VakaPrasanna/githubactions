@@ -1,9 +1,0 @@
-name: License Check Action
-description: Enhanced composite action for License Check stage with comprehensive Jenkins feature support
-inputs: {}
-runs:
-  using: composite
-  steps:
-  - name: Run command 1
-    run: mvn license:check
-    shell: bash

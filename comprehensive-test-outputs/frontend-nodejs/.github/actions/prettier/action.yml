@@ -1,9 +1,0 @@
-name: Prettier Action
-description: Enhanced composite action for Prettier stage with comprehensive Jenkins feature support
-inputs: {}
-runs:
-  using: composite
-  steps:
-  - name: Run command 1
-    run: npm run format:check
-    shell: bash

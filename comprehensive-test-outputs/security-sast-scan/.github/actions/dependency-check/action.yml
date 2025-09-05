@@ -1,9 +1,0 @@
-name: Dependency Check Action
-description: Enhanced composite action for Dependency Check stage with comprehensive Jenkins feature support
-inputs: {}
-runs:
-  using: composite
-  steps:
-  - name: Run command 1
-    run: dependency-check  --project "MyProject"  --scan .  --format JSON  --out dependency-check-report.json
-    shell: bash

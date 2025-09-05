@@ -1,9 +1,0 @@
-name: Push to Registry Action
-description: Enhanced composite action for Push to Registry stage with comprehensive Jenkins feature support
-inputs:
-  tag:
-    description: Parameter TAG
-    required: true
-runs:
-  using: composite
-  steps: []

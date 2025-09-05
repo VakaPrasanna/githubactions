@@ -1,9 +1,0 @@
-name: Performance Tests Action
-description: Enhanced composite action for Performance Tests stage with comprehensive Jenkins feature support
-inputs: {}
-runs:
-  using: composite
-  steps:
-  - name: Run command 1
-    run: jmeter -n -t performance-tests.jmx  -Jhost=staging.company.com  -Jusers=50  -Jrampup=300  -l results.jtl
-    shell: bash

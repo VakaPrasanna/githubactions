@@ -1,11 +1,11 @@
 name: Deploy to Kubernetes Action
 description: Enhanced composite action for Deploy to Kubernetes stage with comprehensive Jenkins feature support
 inputs:
-  deploy-env:
-    description: Parameter DEPLOY_ENV
-    required: true
   app-name:
     description: Parameter APP_NAME
+    required: true
+  deploy-env:
+    description: Parameter DEPLOY_ENV
     required: true
 runs:
   using: composite
