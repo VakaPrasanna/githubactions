@@ -148,6 +148,8 @@ jobs:
     - uses: actions/checkout@v4
     - name: Run Deploy to Kubernetes
       uses: ./.github/actions/deploy-to-kubernetes
+      with:
+        image-name: prasannavaka81/githubactions1
       timeout-minutes: 30
     if: always() && (needs.quality-gate.result == 'success' || needs.quality-gate.result == 'failure')
   smoke-test:
