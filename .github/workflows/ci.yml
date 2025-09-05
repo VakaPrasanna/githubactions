@@ -40,7 +40,7 @@ name: CI Pipeline
 env:
   REGISTRY: ghcr.io/your-org
   # IMAGE: ${{ env.REGISTRY }}/${{ inputs.APP_NAME }}
-  SONARQUBE_SERVER: sonarqube-prod
+  SONARQUBE_SERVER: http://10.138.77.59:9000
   MAVEN_OPTS: -Dmaven.test.failure.ignore=false -DskipTests
 permissions:
   contents: read
