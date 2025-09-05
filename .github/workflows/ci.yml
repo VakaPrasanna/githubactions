@@ -118,7 +118,7 @@ jobs:
         docker-password: ${{ secrets.DOCKER_PASSWORD }}
         # registry-cred-username: ${{ secrets.REGISTRY_CRED_USERNAME }}
         # registry-cred-password: ${{ secrets.REGISTRY_CRED_PASSWORD }}
-        image-name: prasannavaka81/githubactions
+        image-name: prasannavaka81/githubactions1
         build-tag: ${{ github.sha }}
         registry: docker.io
       timeout-minutes: 30
