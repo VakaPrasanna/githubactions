@@ -39,7 +39,7 @@ runs:
   #   run: docker build -t ${{ inputs.image-name }}:${{ inputs.bulid-tag }} .
   #   shell: bash
   - name: Push Docker image
-    run: docker push ${{ inputs.image-name }}:${{ inputs.bulid-tag }}
+    run: docker push ${{ inputs.image-name }}:${{ inputs.build-tag }}
     shell: bash
   # - name: Run command 1
   #   run: echo "$REGISTRY_CRED_PSW" | docker login ${REGISTRY} -u "$REGISTRY_CRED_USR" --password-stdin
