@@ -4,6 +4,10 @@ inputs: {}
 runs:
   using: composite
   steps:
+  - name: vesion test
+    run: |
+      mvn --version
+      java --version
   - name: Run command 1
     run: mvn clean package -DskipITs=false
     shell: bash
