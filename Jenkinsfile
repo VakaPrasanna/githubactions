@@ -7,7 +7,7 @@ pipeline {
     // ==============================
     tools{
         maven 'maven-3.9'
-        jdk 'jdk-21'
+        jdk 'jdk-17'
     }
     options {
         ansiColor('xterm')
