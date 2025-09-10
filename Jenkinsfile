@@ -161,15 +161,15 @@ pipeline {
         }
         success {
             echo "Pipeline succeeded ✅"
-            slackSend(channel: '#deployments', message: "SUCCESS: ${params.APP_NAME} build ${BUILD_TAG}", webhookUrl: "${SLACK_CRED}")
+            //slackSend(channel: '#deployments', message: "SUCCESS: ${params.APP_NAME} build ${BUILD_TAG}", webhookUrl: "${SLACK_CRED}")
         }
         failure {
             echo "Pipeline failed ❌"
-            slackSend(channel: '#deployments', message: "FAILURE: ${params.APP_NAME} build ${BUILD_TAG}", webhookUrl: "${SLACK_CRED}")
+            //slackSend(channel: '#deployments', message: "FAILURE: ${params.APP_NAME} build ${BUILD_TAG}", webhookUrl: "${SLACK_CRED}")
         }
         unstable {
             echo "Pipeline unstable ⚠️"
-            slackSend(channel: '#deployments', message: "UNSTABLE: ${params.APP_NAME} build ${BUILD_TAG}", webhookUrl: "${SLACK_CRED}")
+            //slackSend(channel: '#deployments', message: "UNSTABLE: ${params.APP_NAME} build ${BUILD_TAG}", webhookUrl: "${SLACK_CRED}")
         }
     }
 }
