@@ -35,9 +35,9 @@ pipeline {
         IMAGE            = "${env.REGISTRY}/${params.APP_NAME}"
         SONARQUBE_SERVER = 'sonarqube-prod'
         REGISTRY_CRED    = credentials('registry-writer')
-        SLACK_CRED       = credentials('slack-webhook')
-        KUBE_CONFIG_DEV  = credentials('kubeconfig-dev')
-        KUBE_CONFIG_PRD  = credentials('kubeconfig-prd')
+        // SLACK_CRED       = credentials('slack-webhook')
+        // KUBE_CONFIG_DEV  = credentials('kubeconfig-dev')
+        // KUBE_CONFIG_PRD  = credentials('kubeconfig-prd')
         MAVEN_OPTS       = '-Dmaven.test.failure.ignore=false -DskipTests'
     }
 
