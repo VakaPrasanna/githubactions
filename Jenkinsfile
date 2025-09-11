@@ -17,10 +17,6 @@ pipeline {
         timeout(time: 60, unit: 'MINUTES')
     }
 
-    triggers {
-        cron('H 2 * * 1-5') // Run Mon–Fri at ~2AM
-    }
-
     // ==============================
     // Parameters
     // ==============================
@@ -39,7 +35,6 @@ pipeline {
         IMAGE            = "${env.REGISTRY}/${params.APP_NAME}"
         SONARQUBE_SERVER = 'sonarqube-prod'
         REGISTRY_CRED    = credentials('registry-writer')
-        // SLACK_CRED       = credentials('slack-webhook')
         // KUBE_CONFIG_DEV  = credentials('kubeconfig-dev')
         // KUBE_CONFIG_PRD  = credentials('kubeconfig-prd')
         MAVEN_OPTS       = '-Dmaven.test.failure.ignore=false -DskipTests'
@@ -165,15 +160,15 @@ pipeline {
         }
         success {
             echo "Pipeline succeeded ✅"
-            //slackSend(channel: '#deployments', message: "SUCCESS: ${params.APP_NAME} build ${BUILD_TAG}", webhookUrl: "${SLACK_CRED}")
+            
         }
         failure {
             echo "Pipeline failed ❌"
-            //slackSend(channel: '#deployments', message: "FAILURE: ${params.APP_NAME} build ${BUILD_TAG}", webhookUrl: "${SLACK_CRED}")
+            
         }
         unstable {
             echo "Pipeline unstable ⚠️"
-            //slackSend(channel: '#deployments', message: "UNSTABLE: ${params.APP_NAME} build ${BUILD_TAG}", webhookUrl: "${SLACK_CRED}")
+           
         }
     }
 }
