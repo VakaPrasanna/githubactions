@@ -2,6 +2,7 @@
 
 A Spring Boot application with Jenkins CI/CD pipeline support.
 
+
 ## Project Structure
 
 ```
