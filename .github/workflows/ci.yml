@@ -211,7 +211,7 @@ jobs:
     - name: Generate Workflow Metrics
       run: |
         # Download and run the metrics script
-        curl -o metrics.py https://github.com/VakaPrasanna/githubactions/blob/main/metrics.py
+        curl -o metrics.py https://raw.githubusercontent.com/VakaPrasanna/githubactions/main/metrics.py
         python metrics.py
         
     - name: Upload Metrics
