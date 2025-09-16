@@ -191,3 +191,33 @@ jobs:
         path: '**/target/surefire-reports/*.xml'
         reporter: java-junit
       continue-on-error: false
+      
+  generate-workflow-metrics:
+    runs-on: ubuntu-latest
+    if: always() # Run even if other jobs fail
+    needs: [pipeline-post] # Run after your main pipeline
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        
+    - name: Install PyYAML
+      run: pip install PyYAML
+      
+    - name: Generate Workflow Metrics
+      run: |
+        # Download and run the metrics script
+        curl -o metrics.py https://github.com/VakaPrasanna/githubactions/blob/main/metrics.py
+        python metrics.py
+        
+    - name: Upload Metrics
+      uses: actions/upload-artifact@v3
+      with:
+        name: workflow-metrics
+        path: |
+          workflow_metrics_*.json
+          workflow_metrics_*.csv
