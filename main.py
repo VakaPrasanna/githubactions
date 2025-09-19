@@ -2,7 +2,7 @@
 #!/usr/bin/env python3
 """
 Enhanced Jenkins Declarative Pipeline -> GitHub Actions converter
-Main entry point with interactive HTML report generation
+
 """
 
 import sys
