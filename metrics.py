@@ -58,27 +58,40 @@ class SimpleWorkflowMetricsGenerator:
         return output_lines
     
     def generate_metrics(self):
-        """Generate metrics matching the screenshot format"""
+        """Generate metrics with single metadata at top"""
         jobs = self.workflow_data.get('jobs', {})
-        result = {}
         
-        for job_name, job_config in jobs.items():
-            # Generate job-level data
-            job_start = self.base_timestamp + timedelta(minutes=random.randint(0, 10))
-            job_duration = random.randint(60, 300) # 1-5 minutes
-            job_end = job_start + timedelta(seconds=job_duration)
-            
-            # Determine job status (85% success rate)
-            job_status = "success" if random.random() > 0.15 else "failure"
+        # Single metadata at the top
+        workflow_start = self.base_timestamp
+        total_duration = random.randint(300, 1800) # 5-30 minutes total
+        workflow_end = workflow_start + timedelta(seconds=total_duration)
+        overall_status = "success" if random.random() > 0.2 else "failure"
+        
+        result = {
+            "metadata": {
+                "Workflow URL": f"https://gh.asml.com/repos/asml-gh/lc09-obi-actions-common/actions/runs/{random.randint(1000000, 9999999)}",
+                "Start Time": workflow_start.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
+                "End Time": workflow_end.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
+                "Total Duration": f"{total_duration}s",
+                "Overall Status": overall_status,
+                "Repository": "asml-gh/lc09-obi-actions-common"
+            }
+        }
+        
+        # Filter jobs - stop after pipeline-post
+        job_names = list(jobs.keys())
+        if 'pipeline-post' in job_names:
+            pipeline_post_index = job_names.index('pipeline-post')
+            filtered_jobs = {k: jobs[k] for k in job_names[:pipeline_post_index + 1]}
+        else:
+            filtered_jobs = jobs
+        
+        for job_name, job_config in filtered_jobs.items():
+            # Generate job timing
+            job_duration = random.randint(60, 300) # 1-5 minutes per job
+            job_status = "success" if overall_status == "success" and random.random() > 0.15 else "failure"
             
             job_data = {
-                "data": {
-                    "Job URL": f"https://gh.asml.com/repos/asml-gh/lc09-obi-actions-common/actions/runs/{random.randint(1000000, 9999999)}",
-                    "Start Time": job_start.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
-                    "End Time": job_end.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
-                    "Duration": f"{job_duration}s",
-                    "Status": job_status
-                },
                 "stderr": {
                     "file": f"logs/{job_name}.txt",
                     "errors": []
@@ -88,19 +101,19 @@ class SimpleWorkflowMetricsGenerator:
             
             # Add error if job failed
             if job_status == "failure":
-                error_ts = (job_end - timedelta(seconds=10)).strftime("%Y-%m-%dT%H:%M:%S.%fZ")
+                error_ts = (self.base_timestamp + timedelta(seconds=random.randint(30, job_duration))).strftime("%Y-%m-%dT%H:%M:%S.%fZ")
                 job_data["stderr"]["errors"].append(f"{error_ts} ##[error]Process completed with exit code 1.")
             
             # Process steps
             steps = job_config.get('steps', [])
             for step_idx, step in enumerate(steps):
                 step_name = step.get('name', f'Step {step_idx + 1}')
-                step_key = step_name.lower().replace(' ', '').replace('-', '').replace('&', '')
+                step_key = step_name.lower().replace(' ', '').replace('-', '').replace('&', '').replace('(', '').replace(')', '')
                 
                 # Extract commands
                 commands = self._extract_commands_from_step(step)
                 
-                # Generate step status (most steps succeed)
+                # Generate step status
                 step_status = "success" if job_status == "success" and random.random() > 0.1 else "failure"
                 
                 # Generate output
